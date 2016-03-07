@@ -1,0 +1,1 @@
+select m.empname, m.empid from employee m  inner join department d on m.deptid = d.deptid where empid in (select e.mgrid from employee e where e.empid in (select c.empid from commission c) and e.workcity='Vancouver') and d.deptname='Finance';
